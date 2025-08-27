@@ -19,7 +19,7 @@ const initialValues: NoteValues = { title: "", content: "", tag: "Todo" };
 
 const Schema = Yup.object().shape({
   title: Yup.string()
-    .min(2, "min length 2 symbols")
+    .min(3, "min length 3 symbols")
     .max(50, "max length 50 symbols")
     .required("this field is required"),
   content: Yup.string().max(500, "max length 500 symbols"),

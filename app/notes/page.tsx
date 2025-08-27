@@ -6,9 +6,9 @@ import {
 } from "@tanstack/react-query";
 import NotesClient from "./Notes.client";
 
-const NotesPage = () => {
+const NotesPage = async () => {
   const queryClient = new QueryClient();
-  queryClient.prefetchQuery({
+  await queryClient.prefetchQuery({
     queryKey: ["notes"],
     queryFn: () => fetchNotes(1),
   });

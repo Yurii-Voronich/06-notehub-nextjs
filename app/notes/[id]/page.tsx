@@ -13,7 +13,7 @@ const TaskDetails = async ({ params }: TaskDetailProps) => {
   const { id } = await params;
   const queryClient = new QueryClient();
   queryClient.prefetchQuery({
-    queryKey: ["note"],
+    queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),
   });
   return (
